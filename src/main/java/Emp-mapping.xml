@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.hibernate.com.map.Emp" table="emp_405">
+<id name="id" column="eid"></id>
+<property name="name"></property>
+<map name="goods" cascade="all">
+<key column="customer_id"></key>
+<index column = "Product_Types" type="string" />
+<one-to-many class="com.hibernate.com.map.Goods"></one-to-many>
+</map>
+</class>
+<class name="com.hibernate.com.map.Goods" table="goods_405">
+<id name="pid"></id>
+<property name="product"></property>
+<property name="productID"></property>
+</class>
+</hibernate-mapping>
